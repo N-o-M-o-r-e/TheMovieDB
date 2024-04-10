@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".view.fragment.LoginFragment">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/img_app"/>
+    <EditText
+        android:id="@+id/edtUserName"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="40dp"
+        android:hint="@string/user_name"
+        android:paddingHorizontal="24dp"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:background="@drawable/bg_edittext"
+        android:layout_marginHorizontal="32dp"/>
+
+    <EditText
+        android:id="@+id/edtPassWord"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/pass_word"
+        android:paddingHorizontal="24dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:inputType="textPassword"
+        android:background="@drawable/bg_edittext"
+        android:layout_marginHorizontal="32dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnLogin"
+        android:layout_width="160dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bg_button"
+        android:text="@string/login"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:textSize="20sp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/tvCreateAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/don_t_have_acount"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="40dp"
+        android:textColor="#80FFFFFF"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
