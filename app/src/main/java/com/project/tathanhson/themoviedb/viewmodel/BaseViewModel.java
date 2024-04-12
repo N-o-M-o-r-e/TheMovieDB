@@ -4,8 +4,11 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
+import androidx.viewbinding.ViewBinding;
 
+import com.project.tathanhson.themoviedb.OnAPICallback;
 import com.project.tathanhson.themoviedb.api.API;
+import com.project.tathanhson.themoviedb.view.base.BaseFragment;
 
 import java.util.concurrent.TimeUnit;
 
@@ -20,6 +23,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class BaseViewModel extends ViewModel {
     public static final String BASE_URL = "https://api.themoviedb.org/3/";
     public static final String TAG ="AAAAAAAAA";
+    protected OnAPICallback callback;
+
+    public void setCallback(OnAPICallback callback) {
+        this.callback = callback;
+    }
+
     protected final API getAPI(){
         Retrofit rs = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
@@ -34,6 +43,7 @@ public class BaseViewModel extends ViewModel {
             @Override
             public void onResponse(@NonNull Call<T> call, @NonNull Response<T> response) {
                 if (response.code()==200 || response.code()==201){
+                    assert response.body() !=null;
                     handleSuccess(key ,response.body());
                 }else {
                     handleFaild(key, response.code(), response.errorBody());
@@ -48,20 +58,16 @@ public class BaseViewModel extends ViewModel {
     }
 
     protected void handleException(String key, Throwable t) {
-
+        callback.apiError(key, 999, t.getMessage());
     }
 
     protected void handleFaild(String key, int code, ResponseBody responseBody) {
         Log.e("AAAAAAAA", "handleFaild: "+code);
-        if (code==401){
-            //authen faild
-
-        }else{
-            //something went wrong
-        }
+        callback.apiError(key,code,responseBody);
     }
 
     protected void handleSuccess(String key,Object body) {
-        //do nothing
+        callback.apiSucsess(key, body);
     }
+
 }

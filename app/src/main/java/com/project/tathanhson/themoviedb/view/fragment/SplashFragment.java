@@ -2,12 +2,14 @@ package com.project.tathanhson.themoviedb.view.fragment;
 
 import android.os.Handler;
 
+import androidx.annotation.Nullable;
+
 import com.project.tathanhson.themoviedb.R;
 import com.project.tathanhson.themoviedb.databinding.FragmentSplashBinding;
 import com.project.tathanhson.themoviedb.view.base.BaseFragment;
-import com.project.tathanhson.themoviedb.viewmodel.MainViewModel;
+import com.project.tathanhson.themoviedb.viewmodel.LoginViewModel;
 
-public class SplashFragment extends BaseFragment<FragmentSplashBinding, MainViewModel> {
+public class SplashFragment extends BaseFragment<FragmentSplashBinding, LoginViewModel> {
     public static final String TAG = SplashFragment.class.getName();
 
     @Override
@@ -15,11 +17,13 @@ public class SplashFragment extends BaseFragment<FragmentSplashBinding, MainView
         return R.layout.fragment_splash;
     }
 
+    @Nullable
     @Override
-    public Class<MainViewModel> initViewModelClass() {
-        return MainViewModel.class;
+    public Class<LoginViewModel> initViewModelClass() {
+        return LoginViewModel.class;
     }
 
+    @Nullable
     @Override
     public FragmentSplashBinding initViewBinding() {
         return FragmentSplashBinding.inflate(getLayoutInflater());

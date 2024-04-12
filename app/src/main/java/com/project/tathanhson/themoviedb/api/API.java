@@ -1,7 +1,9 @@
 package com.project.tathanhson.themoviedb.api;
 
 import com.project.tathanhson.themoviedb.api.req.AccountReq;
+import com.project.tathanhson.themoviedb.api.req.RequestTokenReq;
 import com.project.tathanhson.themoviedb.api.res.AuthenRes;
+import com.project.tathanhson.themoviedb.api.res.SessionRes;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -19,6 +21,10 @@ public interface API {
     @POST("authentication/token/validate_with_login?api_key="+API_KEY)
     @Headers("Content-Type: application/json")
     Call<AuthenRes> createSession(@Body AccountReq accountReq);
+
+    @POST("authentication/session/new?api_key="+API_KEY)
+    @Headers("Content-Type: application/json")
+    Call<SessionRes> createSessionID(@Body RequestTokenReq tokenReq);
 
 
 }

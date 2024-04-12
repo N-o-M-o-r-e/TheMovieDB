@@ -1,5 +1,7 @@
 package com.project.tathanhson.themoviedb.view.activity;
 
+import androidx.annotation.Nullable;
+
 import com.project.tathanhson.themoviedb.R;
 import com.project.tathanhson.themoviedb.databinding.ActivityMainBinding;
 import com.project.tathanhson.themoviedb.view.base.BaseActivity;
@@ -12,11 +14,13 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, BaseViewMode
     private SplashFragment frgSplash;
     private LoginFragment frgLogin;
 
+    @Nullable
     @Override
     public Class<BaseViewModel> initViewModelClass() {
         return BaseViewModel.class;
     }
 
+    @Nullable
     @Override
     public ActivityMainBinding initViewBinding() {
         return ActivityMainBinding.inflate(getLayoutInflater());
@@ -34,7 +38,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, BaseViewMode
     }
 
     @Override
-    public void showFragment(String tag, Object data) {
+    public void showFragment(@Nullable String tag, @Nullable Object data) {
         if (tag.equals(LoginFragment.TAG)) {
             showFragmentLogin(data);
         }

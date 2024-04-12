@@ -2,6 +2,7 @@ package com.project.tathanhson.themoviedb.view.base;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewbinding.ViewBinding;
@@ -15,7 +16,7 @@ public abstract class BaseActivity<V extends ViewBinding, VM extends BaseViewMod
     protected VM model;
 
     @Override
-    protected final void onCreate(Bundle savedInstanceState) {
+    protected final void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = initViewBinding();
         model = new ViewModelProvider(this).get(initViewModelClass());
