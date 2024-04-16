@@ -1,4 +1,4 @@
-package com.project.tathanhson.themoviedb.api.res;
+package com.project.tathanhson.themoviedb.model.api.res;
 
 import androidx.annotation.NonNull;
 

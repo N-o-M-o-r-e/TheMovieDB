@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewbinding.ViewBinding;
 
-import com.project.tathanhson.themoviedb.OnAPICallback;
+import com.project.tathanhson.themoviedb.view.interfaces.OnAPICallback;
 import com.project.tathanhson.themoviedb.view.fragment.LoginFragment;
 import com.project.tathanhson.themoviedb.viewmodel.BaseViewModel;
 

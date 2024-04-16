@@ -1,4 +1,4 @@
-package com.project.tathanhson.themoviedb.api.req;
+package com.project.tathanhson.themoviedb.model.api.req;
 
 import com.google.gson.annotations.SerializedName;
 

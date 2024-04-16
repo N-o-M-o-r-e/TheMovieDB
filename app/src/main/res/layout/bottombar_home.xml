@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:orientation="horizontal"
+    android:background="@color/bg_color"
+    android:weightSum="4">
+
+    <ImageButton
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/bg_color"
+        android:src="@drawable/ic_list"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/bg_color"
+        android:src="@drawable/ic_favorite"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/bg_color"
+        android:src="@drawable/ic_bookmark"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/bg_color"
+        android:src="@drawable/ic_star"
+        tools:ignore="ContentDescription" />
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

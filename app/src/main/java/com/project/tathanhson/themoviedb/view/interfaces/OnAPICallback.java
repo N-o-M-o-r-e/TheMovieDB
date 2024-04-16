@@ -1,4 +1,4 @@
-package com.project.tathanhson.themoviedb;
+package com.project.tathanhson.themoviedb.view.interfaces;
 
 public interface OnAPICallback {
     void apiSucsess(String key, Object data);

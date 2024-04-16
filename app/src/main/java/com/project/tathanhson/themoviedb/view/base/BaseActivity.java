@@ -7,6 +7,8 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewbinding.ViewBinding;
 
+import com.orhanobut.hawk.Hawk;
+import com.project.tathanhson.themoviedb.MyApplication;
 import com.project.tathanhson.themoviedb.viewmodel.BaseViewModel;
 
 public abstract class BaseActivity<V extends ViewBinding, VM extends BaseViewModel>
@@ -19,8 +21,10 @@ public abstract class BaseActivity<V extends ViewBinding, VM extends BaseViewMod
     protected final void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = initViewBinding();
+
         model = new ViewModelProvider(this).get(initViewModelClass());
         setContentView(binding.getRoot());
+
         initViews();
     }
 }

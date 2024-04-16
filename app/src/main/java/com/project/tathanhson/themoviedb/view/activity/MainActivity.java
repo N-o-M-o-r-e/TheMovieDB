@@ -6,6 +6,8 @@ import com.project.tathanhson.themoviedb.R;
 import com.project.tathanhson.themoviedb.databinding.ActivityMainBinding;
 import com.project.tathanhson.themoviedb.view.base.BaseActivity;
 import com.project.tathanhson.themoviedb.view.base.OnMainCallback;
+import com.project.tathanhson.themoviedb.view.fragment.MovieDetailFragment;
+import com.project.tathanhson.themoviedb.view.fragment.MovieListFragment;
 import com.project.tathanhson.themoviedb.view.fragment.LoginFragment;
 import com.project.tathanhson.themoviedb.view.fragment.SplashFragment;
 import com.project.tathanhson.themoviedb.viewmodel.BaseViewModel;
@@ -13,6 +15,9 @@ import com.project.tathanhson.themoviedb.viewmodel.BaseViewModel;
 public class MainActivity extends BaseActivity<ActivityMainBinding, BaseViewModel> implements OnMainCallback {
     private SplashFragment frgSplash;
     private LoginFragment frgLogin;
+    private MovieListFragment frgListMovies;
+
+    private MovieDetailFragment frgDetailFragment;
 
     @Nullable
     @Override
@@ -32,6 +37,11 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, BaseViewMode
         frgSplash.setCallBack(this);
         frgLogin = new LoginFragment();
         frgLogin.setCallBack(this);
+        frgListMovies = new MovieListFragment();
+        frgListMovies.setCallBack(this);
+        frgDetailFragment = new MovieDetailFragment();
+        frgDetailFragment.setCallBack(this);
+
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.frameLayout, frgSplash)
                 .commit();
@@ -42,6 +52,19 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, BaseViewMode
         if (tag.equals(LoginFragment.TAG)) {
             showFragmentLogin(data);
         }
+        if (tag.equals(MovieListFragment.TAG)) {
+            showFragmentListMovies(data);
+        }
+        if (tag.equals(MovieDetailFragment.TAG)){
+            showFragmemtDetailMovies(data);
+        }
+    }
+
+    private void showFragmemtDetailMovies(Object data) {
+        frgDetailFragment.setData(data);
+        frgDetailFragment.setCallBack(this);
+        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, frgDetailFragment).addToBackStack(null).commit();
+
     }
 
     private void showFragmentLogin(Object data) {
@@ -49,6 +72,14 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, BaseViewMode
         frgLogin.setCallBack(this);
         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, frgLogin).addToBackStack(null).commit();
     }
+
+    private void showFragmentListMovies(Object data) {
+        frgListMovies.setData(data);
+        frgListMovies.setCallBack(this);
+        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, frgListMovies).addToBackStack(null).commit();
+    }
+
+
 
 
 }

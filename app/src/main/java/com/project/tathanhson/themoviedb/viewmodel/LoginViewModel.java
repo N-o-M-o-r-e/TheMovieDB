@@ -1,13 +1,12 @@
 package com.project.tathanhson.themoviedb.viewmodel;
 
-import android.annotation.SuppressLint;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-import com.project.tathanhson.themoviedb.api.req.AccountReq;
-import com.project.tathanhson.themoviedb.api.req.RequestTokenReq;
-import com.project.tathanhson.themoviedb.api.res.AuthenRes;
+import com.project.tathanhson.themoviedb.model.api.req.AccountReq;
+import com.project.tathanhson.themoviedb.model.api.req.RequestTokenReq;
+import com.project.tathanhson.themoviedb.model.api.res.AuthenRes;
 
 public class LoginViewModel extends BaseViewModel {
     public static final String KEY_API_AUTHEN = "KEY_API_AUTHEN";

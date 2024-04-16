@@ -4,11 +4,9 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
-import androidx.viewbinding.ViewBinding;
 
-import com.project.tathanhson.themoviedb.OnAPICallback;
-import com.project.tathanhson.themoviedb.api.API;
-import com.project.tathanhson.themoviedb.view.base.BaseFragment;
+import com.project.tathanhson.themoviedb.view.interfaces.OnAPICallback;
+import com.project.tathanhson.themoviedb.view.interfaces.API;
 
 import java.util.concurrent.TimeUnit;
 
